@@ -1,152 +1,130 @@
 # 🚦 Traffic Flow Optimizer
 
-A Python simulation of traffic flow at intersections, using Pandas and NumPy to optimize signal timings based on traffic volume.
-
-## Features
-- Simulated traffic data generator
-- Optimization logic for signal timing
-- Parallel simulation of multiple intersections
-- Data analysis and visualization using Pandas
-
-## Future Work
-- Integrate RL agent to learn adaptive control
-- Real-time dashboard with Streamlit
-# Traffic-Flow-Optimizer
-
-# Smart Traffic Signal Optimizer
-
-🚦 **Smart Traffic Signal Optimizer** is a Python-based simulation and optimization system for traffic light scheduling at multiple intersections. It leverages data simulation, multiprocessing, and visualization to demonstrate how traffic signals can be optimized dynamically based on vehicle counts.
+A Python-based simulation and optimization tool to model and improve traffic light scheduling at intersections using synthetic data, parallel processing, and a Streamlit dashboard for visual analysis.
 
 ---
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [How It Works](#how-it-works)
-- [Visualizing Results](#visualizing-results)
-- [Future Enhancements](#future-enhancements)
-- [Author](#author)
+## 📌 Overview
+
+The **Traffic Flow Optimizer** simulates traffic conditions at multiple intersections, calculates optimal green light durations based on vehicle flow, and visualizes results through an interactive dashboard.
+
+This project is ideal for showcasing skills in:
+
+- Python (NumPy, Pandas)
+- Parallel computing
+- Data visualization
+- Streamlit web apps
+- Traffic systems and signal timing optimization
 
 ---
 
-## Overview
+## 🧠 Features
 
-This project simulates traffic data for multiple intersections and optimizes traffic light green times to improve flow. It uses realistic random data generation and parallel processing to handle multiple intersections simultaneously.
-
-The system outputs CSV files representing vehicle counts and optimized green light schedules, which can then be visualized through an interactive dashboard.
-
----
-
-## Features
-
-- Simulates traffic flow data per intersection with vehicle counts per lane and minute
-- Calculates optimized green light durations based on traffic volume
-- Parallel processing of multiple intersections to speed up optimization
-- Exports data and optimization results to CSV files for analysis
-- Interactive Streamlit dashboard for visualization of raw and optimized data
+✅ Simulates per-minute traffic data (vehicles/lane/intersection)\
+✅ Optimizes traffic signal green times using traffic density\
+✅ Runs optimization in parallel using multiprocessing\
+✅ Outputs to structured CSV files\
+✅ Visualizes data and results in a Streamlit dashboard
 
 ---
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Python 3.8+**
-- **Pandas** for data manipulation
-- **NumPy** for statistical simulation
-- **Multiprocessing** module for parallel execution
-- **Streamlit** for creating the interactive web dashboard
-- **Matplotlib** for plotting data visualizations
+- **NumPy** – Data simulation and numeric operations
+- **Pandas** – Data manipulation and CSV handling
+- **Multiprocessing** – Parallel execution of optimization
+- **Streamlit** – Web-based interactive dashboard
+- **Matplotlib** – Plots and visual insights
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
+```
 traffic-flow-optimizer/
 ├── src/
-│ ├── generate_multiple.py # Generates simulated traffic data CSVs
-│ ├── simulate_all.py # Optimizes green times in parallel
-│ └── dashboard.py # Streamlit dashboard for visualization
+│   ├── generate_multiple.py       # Generate synthetic traffic data
+│   ├── simulate_all.py            # Parallel optimization logic
+│   └── dashboard.py               # Streamlit dashboard interface
 ├── data/
-│ ├── traffic_A.csv # Sample traffic data for intersection A
-│ ├── traffic_B.csv # Sample traffic data for intersection B
-│ ├── traffic_C.csv # Sample traffic data for intersection C
-│ ├── optimized_A.csv # Optimized schedule for intersection A
-│ ├── optimized_B.csv # Optimized schedule for intersection B
-│ └── optimized_C.csv # Optimized schedule for intersection C
-└── README.md # Project documentation
-
+│   ├── traffic_[A|B|C].csv        # Simulated traffic data
+│   └── optimized_[A|B|C].csv      # Optimized green light durations
+├── README.md                      # Documentation
+```
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### 1. Clone the repository
 
-Make sure you have Python 3.8 or above installed. You can check with:
+```bash
+git clone https://github.com/Arpeet-padhy/Traffic-Flow-Optimizer.git
+cd Traffic-Flow-Optimizer
+```
 
-python --version
+### 2. Install dependencies
 
-Installation
-Clone the repository:
-
-git clone https://github.com/your-username/traffic-flow-optimizer.git
-cd traffic-flow-optimizer
-
-Install required Python packages:
-
-pip install -r requirements.txt
-
-(If you don’t have requirements.txt, just install manually:)
-
+```bash
 pip install pandas numpy streamlit matplotlib
+```
 
+### 3. Generate traffic data
 
-How It Works
-1. Simulate Traffic Data
-Run the data generator to create CSV files simulating traffic counts per lane for each intersection.
-
+```bash
 python src/generate_multiple.py
+```
 
-2. Optimize Traffic Signals
-Run the optimizer that processes the CSVs in parallel and outputs optimized green light durations.
+### 4. Optimize green light durations
+
+```bash
 python src/simulate_all.py
+```
 
+### 5. Launch the dashboard
 
-3. Visualize Results
-Launch the interactive Streamlit dashboard to explore the data and optimization results visually.
-
+```bash
 streamlit run src/dashboard.py
+```
 
-The dashboard lets you select intersections, view raw traffic counts, and see the optimized green signal schedules with charts.
+---
 
-Visualizing Results
-The dashboard displays:
+## 📊 Dashboard Preview
 
-Tables showing raw vehicle counts by direction and time
+The interactive Streamlit app allows you to:
 
-Bar charts aggregating total vehicle counts per lane
+- Select an intersection
+- View raw traffic data
+- See optimized green durations per direction
+- Analyze visual charts (bar and line plots)
 
-Line charts showing green light durations scheduled for each direction over time
+---
 
-Future Enhancements
-Integrate real-world traffic sensor data for live optimization
+## 💡 Future Enhancements
 
-Implement machine learning models to predict traffic volumes
+- Integrate live sensor data from IoT or traffic APIs
+- Implement ML-based traffic prediction models
+- Add map-based visualization using `folium` or `geopandas`
+- Deploy dashboard publicly via Streamlit Cloud or Heroku
+- Use reinforcement learning for advanced signal control
 
-Add map-based visualization using folium or geopandas
+---
 
-Deploy the dashboard on cloud platforms for public access
+## 👤 Author
 
-Incorporate more advanced optimization algorithms (e.g., reinforcement learning)
+**Arpeet Padhy**\
+🔗 [GitHub](https://github.com/Arpeet-padhy) | 🌐 Portfolio Coming Soon
 
-Author
-Arpeet Padhy
-LinkedIn | GitHub | Portfolio
+---
 
-License
-This project is licensed under the MIT License.
+## 📝 License
 
-Feel free to contribute or raise issues!
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Contributions Welcome!
+
+If you have suggestions or ideas for improvement, feel free to fork this repository, create a pull request, or open an issue.
 
